@@ -8,7 +8,7 @@ Cron with other things for docker
 
 
 ## Docker Compose
-To use this, simply attach cron file to `/var/spool/cron/crontabs/root`
+To use this, simply attach cron file to `/etc/crontab`
 ```yaml
 version: "3"
 
@@ -17,5 +17,11 @@ services:
   	image: jujiyangasli/cron:latest
   	volumes:
   		- ./mycron:/etc/crontab
+```
+
+### crontab example
+```bash
+# m h dom mon dow user	command
+* * * * * root echo env > envvars.txt
 ```
 
