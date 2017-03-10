@@ -7,6 +7,9 @@ echo 'Yes, do as I say!' | apt purge -y --force-yes systemd init
 
 apt update && apt install --no-install-recommends -y ca-certificates cron curl
 
+curl -sL https://deb.nodesource.com/setup_6.x | bash - 
+apt install --no-install-recommends -y nodejs
+
 echo "downloading https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-amd64"
 
 curl -L https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-amd64 > /tini
