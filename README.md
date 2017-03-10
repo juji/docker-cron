@@ -8,7 +8,7 @@ Cron with other things for docker
 
 
 ## Docker Compose
-To use this, simply attach cron file to `/var/spool/cron/crontabs/root`
+To use this, simply attach cron file to `/etc/crontab`
 ```yaml
 version: "3"
 
