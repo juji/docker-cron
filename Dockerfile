@@ -1,3 +1,11 @@
 FROM debian:jessie
 
-RUN apt update && apt install -y curl && curl -sL https://deb.nodesource.com/setup_6.x | bash - && apt install -y nodejs cron
+# add tini
+ENV TINI_VERSION v0.14.0
+
+ADD ./build.sh /build.sh
+RUN /bin/bash /build.sh && rm /build.sh
+
+ENTRYPOINT [ "/tini", "--" ]
+CMD [ "/bin/bash", "/croninit.sh" ]
+
