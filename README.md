@@ -16,6 +16,6 @@ services:
   cron:
   	image: jujiyangasli/cron:latest
   	volumes:
-  		- ./mycron:/var/spool/cron/crontabs/root
+  		- ./mycron:/etc/crontab
 ```
 
